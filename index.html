@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Kouzla a tajemství agilního .NET vývoje</title>
+
+  <link rel="stylesheet" href="dist/reset.css" />
+  <link rel="stylesheet" href="dist/reveal.css" />
+  <link rel="stylesheet" href="dist/theme/black.css" />
+  <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+  <style>
+    .logo {
+      position: fixed;
+      left: 50%;
+      top: 25px;
+      transform: translateX(-50%);
+      transition: all linear 300ms;
+    }
+
+    .hide {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="/images/logo.svg" height="32" class="logo hide" id="logo" />
+  <div class="reveal">
+    <div class="slides">
+      <section id="first">
+        <img src="/images/logo.svg" height="40" style="margin-bottom: 2rem;" />
+        <h3>Kouzla a tajemství agilního .NET vývoje</h3>
+        <p>
+          <small>By
+            <a href="https://github.com/Tomas-Juri">Tomáš Juřička</a>
+            and
+            <a href="https://www.linkedin.com/in/ji%C5%99%C3%AD-urban-2743b442/">Jiří Urban</a>
+          </small>
+        </p>
+      </section>
+      <section>
+        <h3>What is it?</h3>
+        <ul>
+          <p>Separating functions and Data</p>
+          <p>Expressions over statements</p>
+          <p>Immutable state</p>
+        </ul>
+        <aside class="notes">
+          Splitting data and logic <br />
+          Small reusable functions <br />
+          Pass functions around <br />
+          Functions = methods that return value <br /><br />
+          Expression is something that returns a value <br />
+          Chain functions on values <br />
+          Return a function as a value <br /><br />
+          State doesn't change <br />
+          Extreme benefits in UI libs like Blazor <br />
+          Fluent like API <br />
+          Thread safe-ish
+        </aside>
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    Reveal.initialize({
+      width: "70%",
+      height: "80%",
+      hash: true,
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+    });
+
+    Reveal.on("slidechanged", (event) => {
+      if (event.previousSlide.id === "first")
+        document.getElementById("logo").classList.remove("hide");
+
+      if (event.currentSlide.id === "first")
+        document.getElementById("logo").classList.add("hide");
+    });
+  </script>
+</body>
+
+</html>
