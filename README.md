@@ -1,4 +1,4 @@
-# Mysteries of .NET agile development
+# Mysteries of agile development
 
 Deployed at [github pages](https://tomas-juri.github.io/Presentation-AgileSoftwareDevelopment/#/first)
 
